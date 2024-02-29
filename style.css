@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: clip;
+}
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -10;
+}
+.container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    height: 1000px;
+    width: 800px;
+    overflow: clip;
+}
+.machine-template {
+    position: absolute;
+    bottom: -200px;
+    height: 100%;
+    width: 100%;
+    scale: 1.5;
+    object-fit: contain;
+}
+.screen {
+    position: absolute;
+    background-color: rgba(255,255,255, 0.5);
+    width: 27em;
+    height: 19em;
+    top: 15.6em;
+    left: 0;
+    right: 10px;
+    margin: 0 auto;
+    z-index: -10;
+}
+.screen-contents {
+    width: 100%;
+    height: 100%;
+}
+.game-intro {
+    width: 100%;
+    height: 100%;
+    background-image: url(resources/intro.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.game-intro {
+    animation: unset;
+}
+.icons {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 2em;
+    width: 100%;
+    height: 10em;
+}
+.icon-left, .icon-right {
+    width: 50%;
+    height: 100%;
+    background-image: unset;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: none; 
+}
+.icon-right {
+    animation: unset;
+}
+.win-banner, .lose-banner, .tie-banner {
+    position: absolute;
+    z-index: 9;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.win-banner {
+    background-image: unset;
+    display: none;
+}
+.lose-banner {
+    background-image: unset;
+    display: none;
+}
+.tie-banner {
+    background-image: unset;
+    display: none;
+}
+.buttons {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 15em;
+    width: 75%;
+    height: 7em;
+    z-index: 1;
+}
+#rock, #paper, #scissors, #reset {
+    height: 100%;
+    width: 25%;
+}
+.top-button {
+    position: absolute;
+    height: 100%;
+    width: 10em;
+    transition: bottom 0.1s ease-out; 
+}
+.top-button:active {
+    bottom: -10px;
+}
+.top-text {
+    position: absolute;
+    z-index: -2;
+    width: 10em;
+}
+.top {
+    position: absolute;
+    z-index: -3;
+    width: 9em;
+}
+.bottom-fh {
+    position: absolute;
+    z-index: -4;
+    width: 9em;
+}
+.bottom {
+    position: absolute;
+    z-index: -1;
+    width: 9em;
+}
+.link-button, .credit-button, .credit-button-top, .credit-button-bottom, .credit-button-text {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8em;
+}
+.link-button {
+    left: 0;
+    bottom: -15em;
+}
+.credit-button-text {
+    z-index: 0;
+}
+.credit-button-top {
+    z-index: -1;
+}
+.credit-button-bottom {
+    z-index: -2;
+}
+.credit-button:active {
+    transform: scale(0.9)
+}
+@keyframes cicle {
+    0% {
+        background-image: url(resources/rock-icon.png)
+    }
+    50% {
+        background-image: url(resources/paper-icon.png);
+    }
+    100% {
+        background-image: url(resources/scissors-icon.png);
+    }
+}
+@keyframes backgroundCicle {
+    0% {
+        background-image: url(resources/start.jpg);
+    }
+    50% {
+        background-image: url(resources/middle.jpg);
+    }
+    100% {
+        background-image: url(resources/end.jpg);
+    }
+}
+@media screen and (max-width: 380px) {
+    .container {
+        position: absolute;
+        scale: 0.4 !important;
+        bottom: -100px !important;
+        left: -215px !important;
+    }
+    .machine-template {
+        width: unset;
+        left: 125px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .container {
+        position: absolute;
+        right: -200px;
+        bottom: 0px;
+        left: auto;
+        scale: 0.5;
+        overflow: unset;
+    }
+    .machine-template {
+        width: unset;
+        left: 125px;
+    }
+}
+@media screen and (min-width: 1300px) and (max-width: 1360px)  {
+    .container {
+        position: absolute !important;
+        scale: 0.5;
+        bottom: -125px;
+        overflow: unset;
+    }
+}
+@media screen and (min-width: 2040px) and (max-width: 2050px) {
+    .container {
+        position: absolute;
+        scale: 1;
+        bottom: 50px;
+        overflow: unset;
+    }
+}
+@media screen and (min-width: 3800px) {
+    .container {
+        position: absolute;
+        scale: 1.5;
+        bottom: 500px;
+        overflow: unset;
+    }
+}
